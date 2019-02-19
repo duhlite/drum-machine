@@ -16,13 +16,24 @@ class DrumPad extends Component {
         this.playSound = this.playSound.bind(this)
     }
 
+    componentDidMount = () => {
+        document.addEventListener('keydown',this.handleKeyDown)
+    }
+
+    componentWillUnmount = () => {
+        document.removeEventListener('keydown')
+    }
+
+    handleKeyDown = (e) => {
+        if(e.keyCode === this.props.keyCode) {
+            this.playSound();
+        }
+    }
+
     playSound = () => {
-        console.log(this.props.keyTrigger);
         const sound = document.getElementById(this.props.keyTrigger);
         sound.currentTime = 0;
         sound.play();
-        sound.addEventListener('playing', console.log('playing'));
-        console.log(this.props.clip);
     };
 
 
