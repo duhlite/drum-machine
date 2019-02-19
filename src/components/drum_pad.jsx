@@ -6,7 +6,8 @@ const style1 = {
         width: '40px',
         backgroundColor: 'white',
         margin: 'auto',
-        border: '1px solid black'
+        border: '1px solid black',
+        display: 'inline-block',
     }
 
 class DrumPad extends Component {
@@ -35,11 +36,10 @@ class DrumPad extends Component {
             >
             <audio 
                 id={this.props.keyTrigger}
-            >
-                <source
+                className='clip'
                 src={this.props.clip}
                 type='audio/wav'
-                />
+            >
             </audio>
             {this.props.keyTrigger}
             </div>
