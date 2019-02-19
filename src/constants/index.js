@@ -14,4 +14,4 @@ export const HIHAT  = process.env.PUBLIC_URL + './samples/hihat-808.wav';
 
 export const OPENHAT = process.env.PUBLIC_URL + './samples/openhat-808.wav';
 
-export const SNARE = process.env.PUBLIC_URL + './samples/snare-808.wav;'
+export const SNARE = process.env.PUBLIC_URL + './samples/snare-808.wav';
