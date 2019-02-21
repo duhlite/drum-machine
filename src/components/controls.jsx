@@ -7,9 +7,12 @@ import Display from './display';
 const Controls = props => {
     return (
         <div id='controls'>
+            <div id='title'>
+            808s And Heartbeatz
+            </div>
             <Power />
-            <Volume />
             <Display />
+            <Volume />
         </div>
     )
 }

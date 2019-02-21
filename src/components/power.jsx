@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {togglePower} from '../actions/index'
 import Switch from 'react-toggle-switch';
-import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
+
 
 function mapDispatchToProps(dispatch) {
     return {

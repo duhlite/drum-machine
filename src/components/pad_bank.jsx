@@ -3,9 +3,6 @@ import DrumPad from './drum_pad';
 import bankOne from '../banks/bank_1';
 
 class PadBank extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
         let padBank = bankOne.map((el,i,samArr) => {

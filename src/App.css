@@ -1,33 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Nova+Flat');
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#drum-machine {
+  position: relative;
+  width: 660px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #727472;
+  width: 750px;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pad-bank {
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  font-family: 'Nova Flat', cursive;
+  font-size: 36px;
+}
+
+.drum-pad {
+  float: left;
+  width: 100px;
+  height: 90px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  box-shadow: 3px 3px black;
+  box-sizing: border-box;
+  background-color: #00BFFF;
+  border: 1px solid black;
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+#controls {
+  display: inline-block;
+  position: relative;
+  height: 280px;
+  width: 240px;
+  margin: 40px 20px 0 10px;
+  vertical-align: top;
+}
+
+#title {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 36px;
+  color: #00BFFF;
+}
+
+#display {
+  font-family: 'Nova Flat', cursive;
+  font-size: 24px;
+  border: 5px solid black;
+  background-color: black;
+  color: chartreuse;
+  cursor: pointer;
+}
+
+.switch{
+  border:1px solid black;
+  background: #FF0040;
+  width:50px;
+  height:26px;
+  border-radius:5px;
+  cursor:pointer;
+  display:inline-block
+}
+.switch-toggle{
+  border:1px solid black;
+  width:25px;
+  height:24px;
+  left:0;
+  border-radius:6px;
+  background:#494b49;
+  position:relative;
+  transition:left .2s ease-in-out
+}
+.switch.on{
+  background:chartreuse;
+}
+.switch.on .switch-toggle{
+  left:23px
+}
+.switch.disabled{
+  cursor:not-allowed
+}
+
+.rc-slider {
+  position: relative;
+  height: 30px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  -ms-touch-action: none;
+      touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  height: 20px;
+  border-radius: 6px;
+}
+.rc-slider-track {
+  position: absolute;
+  left: 0;
+  height: 20px;
+  border-radius: 6px;
+  background-color: chartreuse;
+}
+.rc-slider-handle {
+  position: absolute;
+  margin-left: -7px;
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border: solid 2px #ff8000;
+  background-color: chartreuse;
+  -ms-touch-action: pan-x;
+      touch-action: pan-x;
+}
+.rc-slider-handle:focus {
+  border-color: #ff8000;
+  box-shadow: 0 0 0 2px #FFC080;
+  outline: none;
+}
+.rc-slider-handle-click-focused:focus {
+  border-color: #ff8000;
+  box-shadow: unset;
+}
+.rc-slider-handle:hover {
+  border-color: #ff8000;
+}
+.rc-slider-handle:active {
+  border-color: #ff8000;
+  box-shadow: 0 0 5px #FFC080;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+.rc-slider-mark {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+}
+.rc-slider-mark-text {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+.rc-slider-mark-text-active {
+  color: #666;
+}
+.rc-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+.rc-slider-dot {
+  position: absolute;
+  bottom: -2px;
+  margin-left: -4px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #e9e9e9;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.rc-slider-dot-active {
+  border-color: #96dbfa;
 }

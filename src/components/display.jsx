@@ -9,7 +9,7 @@ class ConnectedDisplay extends Component {
 
     render() {
         return (
-            <div className='display'>
+            <div id='display'>
                 {this.props.display}
             </div>
         )

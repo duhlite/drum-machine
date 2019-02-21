@@ -2,15 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {updateDisplay} from '../actions/index';
 
-const style1 = {
-        height: '40px',
-        width: '40px',
-        backgroundColor: 'white',
-        margin: 'auto',
-        border: '1px solid black',
-        display: 'inline-block',
-    }
-
 const mapStateToProps = state => {
     return {
         power: state.power,
@@ -63,7 +54,6 @@ class ConnectedDrumPad extends Component {
                 className='drum-pad' 
                 onClick={this.playSound}
                 id = {this.props.id}
-                style = {style1}
             >
             <audio 
                 id={this.props.keyTrigger}

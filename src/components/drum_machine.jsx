@@ -1,10 +1,12 @@
 import React from 'react';
 import PadBank from './pad_bank';
+import Controls from './controls';
 
-const DrumMachine = props => {
+const DrumMachine = () => {
     return (
         <div id='drum-machine'>
             <PadBank />
+            <Controls />
         </div>
     )
 }

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {deltaVolume} from '../actions/index';
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
 
 function mapDispatchToProps(dispatch) {
     return {
