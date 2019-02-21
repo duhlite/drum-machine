@@ -11,7 +11,10 @@ const style1 = {
     }
 
 const mapStateToProps = state => {
-    return {power: state.power};
+    return {
+        power: state.power,
+        volume:state.volume
+    };
 }
 
 class ConnectedDrumPad extends Component {
@@ -38,9 +41,10 @@ class ConnectedDrumPad extends Component {
         if(this.props.power) {
         const sound = document.getElementById(this.props.keyTrigger);
         sound.currentTime = 0;
+        sound.volume = this.props.volume;
         sound.play();
         } else {
-            console.log('needs power');
+            console.log('needs power')
         }  
     };
 

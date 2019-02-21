@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import DrumPad from './drum_pad';
 import bankOne from '../banks/bank_1';
-import {connect} from 'react-redux';
 
-const mapStateToProps = state => {
-    return {power: state.power}
-}
-
-class ConnectedPadBank extends Component {
+class PadBank extends Component {
     constructor() {
         super();
     }
@@ -31,7 +26,5 @@ class ConnectedPadBank extends Component {
         )
     }
 }
-
-const PadBank = connect(mapStateToProps)(ConnectedPadBank);
 
 export default PadBank;
