@@ -1,4 +1,4 @@
-import * as MySamples from '../constants/index';
+import * as MySamples from '../constants/bankone';
 
 const bankOne = [{
     keyCode: 81,

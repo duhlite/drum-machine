@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 
 const style1 = {
         height: '40px',
@@ -10,7 +10,11 @@ const style1 = {
         display: 'inline-block',
     }
 
-class DrumPad extends Component {
+const mapStateToProps = state => {
+    return {power: state.power};
+}
+
+class ConnectedDrumPad extends Component {
     constructor() {
         super();
         this.playSound = this.playSound.bind(this)
@@ -31,9 +35,13 @@ class DrumPad extends Component {
     }
 
     playSound = () => {
+        if(this.props.power) {
         const sound = document.getElementById(this.props.keyTrigger);
         sound.currentTime = 0;
         sound.play();
+        } else {
+            console.log('needs power');
+        }  
     };
 
 
@@ -57,5 +65,7 @@ class DrumPad extends Component {
         )
     }
 }
+
+const DrumPad = connect(mapStateToProps)(ConnectedDrumPad);
 
 export default DrumPad;
