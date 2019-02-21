@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {updateDisplay} from '../actions/index';
 
 const style1 = {
         height: '40px',
@@ -14,6 +15,12 @@ const mapStateToProps = state => {
     return {
         power: state.power,
         volume:state.volume
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        updateDisplay: display => dispatch(updateDisplay(display))
     };
 }
 
@@ -43,6 +50,7 @@ class ConnectedDrumPad extends Component {
         sound.currentTime = 0;
         sound.volume = this.props.volume;
         sound.play();
+        this.props.updateDisplay(this.props.id);
         } else {
             console.log('needs power')
         }  
@@ -70,6 +78,6 @@ class ConnectedDrumPad extends Component {
     }
 }
 
-const DrumPad = connect(mapStateToProps)(ConnectedDrumPad);
+const DrumPad = connect(mapStateToProps,mapDispatchToProps)(ConnectedDrumPad);
 
 export default DrumPad;

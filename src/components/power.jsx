@@ -15,9 +15,6 @@ const mapStateToProps = state => {
 }
 
 class ConnectedPower extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     toggleSwitch = () => {
         this.props.togglePower(true);

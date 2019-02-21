@@ -1,6 +1,7 @@
 import React from 'react';
 import Power from './power';
 import Volume from './volume';
+import Display from './display';
 
 
 const Controls = props => {
@@ -8,6 +9,7 @@ const Controls = props => {
         <div id='controls'>
             <Power />
             <Volume />
+            <Display />
         </div>
     )
 }
